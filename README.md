@@ -16,3 +16,7 @@ This new section was added with the following code:
 
 Yes. A section.
 ```
+
+## Pretend this is a feature
+
+And deserves minor version bump
