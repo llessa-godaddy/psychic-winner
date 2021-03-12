@@ -11,3 +11,10 @@ We are editing for the sake of editing.
 ## New Section
 
 Yes.
+
+This new section was added with the following code:
+```
+## New Section
+
+Yes.
+```
