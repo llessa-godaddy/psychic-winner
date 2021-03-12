@@ -1,0 +1,19 @@
+name: github-tag
+
+on:
+  workflow_dispatch:
+    branches:
+      - $default-branch
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Bump version and push tag
+        id: tag_version
+        uses: mathieudutour/github-tag-action@v5.3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
