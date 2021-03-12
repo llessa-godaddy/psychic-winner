@@ -8,11 +8,11 @@ The seventh commit in fact breaks nothing!
 
 ## New Section
 
-Yes.
+Yes. A section.
 
 This new section was added with the following code:
 ```
 ## New Section
 
-Yes.
+Yes. A section.
 ```
