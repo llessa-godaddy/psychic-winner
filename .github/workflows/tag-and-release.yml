@@ -28,7 +28,6 @@ jobs:
       - uses: marvinpinto/action-automatic-releases@8d9ddb2546e687f72855285d2719a11709cea6d0 # v1.1.0
         with:
           repo_token: ${{ secrets.GITHUB_TOKEN }}
-          automatic_release_tag: ${{ steps.tag_version.outputs.new_version }}
           prerelease: false
           files: |
             README.md
