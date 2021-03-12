@@ -9,7 +9,7 @@ on:
       - $default-branch
 
 jobs:
-  github-tag:
+  tag-and-release:
     runs-on: ubuntu-latest
 
     steps:
@@ -21,13 +21,10 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           
-      - name: CHANGELOG
-        run: |
-          echo "${{ steps.tag_version.outputs.changelog }}" >> changelog.md
-          
-      - name: Archive changelog as artifact
-        uses: actions/upload-artifact@v2
+      - uses: marvinpinto/action-automatic-releases@v1
         with:
-          name: changelog
-          path: changelog.md
-          retention-days: 2
+          repo_token: ${{ secrets.GITHUB_TOKEN }}
+          automatic_release_tag: ${{ steps.tag_version.outputs.new_tag }}
+          prerelease: false
+          files: |
+            README.md
