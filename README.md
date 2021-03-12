@@ -8,11 +8,15 @@ The seventh commit in fact breaks nothing!
 
 ## New Section
 
-Yes.
+Yes. A section.
 
 This new section was added with the following code:
 ```
 ## New Section
 
-Yes.
+Yes. A section.
 ```
+
+## Pretend this is a feature
+
+And deserves minor version bump

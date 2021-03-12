@@ -20,11 +20,10 @@ jobs:
         uses: mathieudutour/github-tag-action@v5.3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
+          dry_run: true
       
       - uses: marvinpinto/action-automatic-releases@latest
         with:
           repo_token: ${{ secrets.GITHUB_TOKEN }}
-          automatic_release_tag: ${{ steps.tag_version.outputs.new_tag }}
+          automatic_release_tag: v${{ steps.tag_version.outputs.new_version }}
           prerelease: false
-          files: |
-            README.md
