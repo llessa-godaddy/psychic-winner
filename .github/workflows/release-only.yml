@@ -1,12 +1,13 @@
 name: release-only
 
 on:
-  push:
-    branches:
-      - main
   workflow_dispatch:
     branches:
       - $default-branch
+    inputs:
+      next_version:
+        description: 'Next version (v1.2.3)'
+        required: true
 
 jobs:
   release-only:
@@ -15,14 +16,11 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
-      - id: get_version
-        run: echo "::set-output name=next_version::v1.3.3"
-
       # will this create the release tag when it doesn't exist?
       - uses: softprops/action-gh-release@91409e712cf565ce9eff10c87a8d1b11b81757ae # v1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          tag_name: ${{ steps.get_version.outputs.next_version }}
+          tag_name: ${{ github.events.inputs.next_version }}
           body: |
-            These are all the things I would like to note with this release. ${{ steps.get_version.outputs.next_version }}
+            These are all the things I would like to note with this release. ${{ github.events.inputs.next_version }}
