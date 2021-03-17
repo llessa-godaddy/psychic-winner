@@ -17,10 +17,9 @@ jobs:
       - uses: actions/checkout@v2
 
       # will this create the release tag when it doesn't exist?
-      - uses: softprops/action-gh-release@91409e712cf565ce9eff10c87a8d1b11b81757ae # v1
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - uses: ncipollo/release-action@d95f7f9bad25c349a7d18578c773a3277b6936e4 # v1.8.1
         with:
-          tag_name: ${{ github.event.inputs.next_version }}
+          token: ${{ secrets.GITHUB_TOKEN }}
+          tag: ${{ github.event.inputs.next_version }}
           body: |
             These are all the things I would like to note with this release. ${{ github.event.inputs.next_version }}
