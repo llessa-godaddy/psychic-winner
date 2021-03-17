@@ -21,6 +21,6 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          tag_name: ${{ github.events.inputs.next_version }}
+          tag_name: ${{ github.event.inputs.next_version }}
           body: |
-            These are all the things I would like to note with this release. ${{ github.events.inputs.next_version }}
+            These are all the things I would like to note with this release. ${{ github.event.inputs.next_version }}
