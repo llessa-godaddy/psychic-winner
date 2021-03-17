@@ -8,6 +8,8 @@ on:
       next_version:
         description: 'Next version (v1.2.3)'
         required: true
+      release_body:
+        description: 'Release description body'
 
 jobs:
   release-only:
@@ -22,6 +24,5 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
           tag: ${{ github.event.inputs.next_version }}
           allowUpdates: true
-          artifacts: 'artifact.zip'
-          body: |
-            These are all the things I would like to note with this release. ${{ github.event.inputs.next_version }}
+        # artifacts: 'artifact.zip'
+          body: ${{ github.event.inputs.release_body }}
