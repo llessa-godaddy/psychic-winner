@@ -1,9 +1,9 @@
 name: github-tag
 
 on:
-  push:
-    branches:
-      - main
+  # push:
+  #  branches:
+  #    - main
   workflow_dispatch:
     branches:
       - $default-branch
