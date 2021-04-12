@@ -6,6 +6,8 @@ This is _truly_ not a real repo.
 
 The seventh commit in fact breaks nothing!
 
+Don't commit this change. Just see if the PR template works.
+
 ## New Section
 
 Yes. A section.
